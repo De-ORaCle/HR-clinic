@@ -5,23 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HR-clinic with Emmanuel Faith</title>
 
+    <!-- Canonical Link -->
+    <link rel="canonical" href="https://www.hr-clinic.com/">
+
+    <!-- Open Graph Meta Tags (for social sharing) -->
+    <meta property="og:title" content="HR-clinic with Emmanuel Faith">
+    <meta property="og:description" content="People are the core of any organization - learn how to manage them. Join an hour speed-consulting session with Emmanuel Faith tailored just for you.">
+    <meta property="og:image" content="https://emaracewellness.com/video/coverhr.jpg">
+    <meta property="og:url" content="https://hr-clinic.netlify.app/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags (for Twitter sharing) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@themmanuelfaith">
+    <meta name="twitter:title" content="HR-clinic with Emmanuel Faith">
+    <meta name="twitter:description" content="People are the core of any organization - learn how to manage them. Join an hour speed-consulting session with Emmanuel Faith tailored just for you.">
+    <meta name="twitter:image" content="https://emaracewellness.com/video/coverhr.jpg">
+
+    <!-- Schema.org JSON-LD (structured data for search engines) -->
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "Organization",
+            "name": "HR-clinic with Emmanuel Faith",
+            "description": "People are the core of any organization - learn how to manage them. Join an hour speed-consulting session with Emmanuel Faith tailored just for you.",
+            "url": "https://hr-clinic.netlify.app/",
+            "logo": "https://hr-clinic.netlify.app/assets/images/logo.svg",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+2347088982988",
+                "contactType": "customer support"
+            },
+            "sameAs": [
+                "https://www.linkedin.com/in/emmanuel-faith/",
+                "https://x.com/themmanuelfaith"
+            ]
+        }
+    </script>
+
     <!-- Font Style -->
     <link rel="stylesheet" type="text/css" href="assets/fonts/fonts.css" />
 
     <!-- CSS Linking -->
     <link rel="stylesheet" href="assets/css/styles.css">
+
+    <!-- Axios Library -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!-- Onload Script Files -->
+    <script src="assets/js/scrollhead.js"></script>
 </head>
 <body>
     <header class="header">
         <div class="desktop-header">
             <div class="nav-logo">
                 <div class="navlink">
-                    <a href="#">
+                    <a href="#whyemmanuel">
                         <p>WHY EMMANUEL?</p>
                     </a>
                 </div>
                 <div class="navlink">
-                    <a href="#">
+                    <a href="#testimonies">
                         <p>TESTIMONIALS</p>
                     </a>
                 </div>
@@ -31,12 +75,12 @@
                     </a>
                 </div>
                 <div class="navlink">
-                    <a href="#">
+                    <a href="#whyregister">
                         <p>LEARN MORE</p>
                     </a>
                 </div>
                 <div class="navlink">
-                    <a href="#">
+                    <a href="#booksession">
                         <p>BOOK A SESSION</p>
                     </a>
                 </div>
@@ -56,22 +100,22 @@
                     <div class="content">
                         <div class="mh-links">
                             <div class="mh-link">
-                                <a href="#">
+                                <a href="#whyemmanuel">
                                     <p>Why Emmanuel?</p>
                                 </a>
                             </div>
                             <div class="mh-link">
-                                <a href="#">
+                                <a href="#whyregister">
                                     <p>Learn More</p>
                                 </a>
                             </div>
                             <div class="mh-link">
-                                <a href="#">
+                                <a href="#testimonies">
                                     <p>Testimonials</p>
                                 </a>
                             </div>
                             <div class="mh-link">
-                                <a href="#">
+                                <a href="#booksession">
                                     <p>Book A Session</p>
                                 </a>
                             </div>
@@ -113,10 +157,10 @@
             </div>
         </div>
     </section>
-    <section class="about-emmanuel">
+    <section class="about-emmanuel" id="whyemmanuel">
         <div class="aboutemmanuel">
             <div class="about-video">
-                <video src="assets/videos/Emmanuel Faith Session.mp4" autoplay muted controls loop></video>
+                <video src="https://emaracewellness.com/video/session.mp4" autoplay muted controls loop></video>
             </div>
             <div class="about-texts">
                 <div class="abouttexts">
@@ -134,7 +178,7 @@
             </div>
         </div>
     </section>
-    <section class="clinic-benefits">
+    <section class="clinic-benefits" id="whyregister">
         <div class="clinicbenefits">
             <div class="cbenefits-head">
                 <h4>Why should you register?</h4>
@@ -165,7 +209,7 @@
             </div>
         </div>
     </section>
-    <section class="organization-invites">
+    <section class="organization-invites" id="orginvite">
         <div class="orginvites">
             <div class="orginvites-texts">
                 <h2>Top organizations invite Emmanuel to help train their staff and give talks at their events.</h2>
@@ -196,14 +240,14 @@
             <img src="assets/images/sisterly.svg" alt="Sisterly HQ">
         </div>
     </section>
-    <section class="book-session">
+    <section class="book-session" id="booksession">
         <div class="booksession">
             <div class="bs-head">
                 <h2>Let’s start with a 1 hour call</h2>
                 <p>This form is set up to get to know you, the HR/People related challenges you currently have, and to invite you for a conversation to discuss possible solutions</p>
             </div>
             <div class="bs-body">
-                <form>
+                <form id="sessionInterest">
                     <div class="bsb-inputgroup">
                         <div class="bsb-input">
                             <label for="name">What’s your full name?</label>
@@ -211,42 +255,47 @@
                         </div>
                         <div class="bsb-input">
                             <label for="occupation">What do you do?</label>
-                            <select name="occupation" id="occupation">
+                            <select name="occupation" id="occupation" required>
+                                <option value="-------" disabled selected>-------</option>
+                                <option value="HR at a start-up">HR at a start-up</option>
                                 <option value="Startup Founder">Startup Founder</option>
-                                <option value=""></option>
-                                <option value=""></option>
-                                <option value=""></option>
-                                <option value=""></option>
+                                <option value="Start-up founder (Post-raise)">Start-up founder (Post-raise)</option>
+                                <option value="NGO">NGO</option>
+                                <option value="Social Entrepreneur">Social Entrepreneur</option>
+                                <option value="Product Manager">Product Manager</option>
+                                <option value="HR Enthusiast">HR Enthusiast</option>
+                                <option value="Others">Others</option>
                             </select>
                         </div>
                     </div>
                     <div class="bsb-input">
                         <label for="challenges">What are your pressing HR/People management realated challenges you are facing?</label>
-                        <input type="text" id="challenges">
+                        <input type="text" id="challenges" required>
                     </div>
                     <div class="bsb-input">
                         <label for="chat">Would you love to have an hour chat about these challenges, while getting precise solutions you could implement immediately? </label>
-                        <select name="chat" id="chat">
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
+                        <select name="chat" id="chat" required>
+                            <option value="-------" disabled selected>-------</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                            <option value="I might consider it">I might consider it</option>
                         </select>
                     </div>
                     <div class="bsb-inputgroup">
                         <div class="bsb-input">
                             <label for="payment">If yes, how much do you think you'd be able to pay for this session?</label>
-                            <select name="payment" id="payment">
+                            <select name="payment" id="payment" required>
+                                <option value="-------" disabled selected>-------</option>
                                 <option value="100-200 dollars">100-200 dollars</option>
-                                <option value=""></option>
-                                <option value=""></option>
-                                <option value=""></option>
-                                <option value=""></option>
+                                <option value="200-300 dollars">200-300 dollars</option>
+                                <option value="300-500 dollars">300-500 dollars</option>
+                                <option value="50-100 dollars">50-100 dollars</option>
+                                <option value="Others">Others</option>
                             </select>
                         </div>
                         <div class="bsb-input">
-                            <label for="other-payment">If you clicked other, please include your preferred amount here</label>
-                            <input type="text" id="other-payment">
+                            <label for="otherpayment">If you clicked other, please include your preferred amount here</label>
+                            <input type="text" id="otherpayment" required>
                         </div>
                     </div>
                     <div class="bsb-input">
@@ -256,19 +305,19 @@
                     <div class="bsb-inputgroup">
                         <div class="bsb-input">
                             <label for="email">Please, share your email address to enable us reach out to you.</label>
-                            <input type="email" id="email">
+                            <input type="email" id="email" required>
                         </div>
                         <div class="bsb-input">
                             <label for="phone">You can also share your phone number if you don't mind.</label>
                             <input type="text" id="phone">
                         </div>
                     </div>
-                    <button type="submit">Submit and Send</button>
+                    <button type="submit" id="sessionSubmit">Submit and Send</button>
                 </form>
             </div>
         </div>
     </section>
-    <section class="testimonies-reviews">
+    <section class="testimonies-reviews" id="testimonies">
         <div class="testimonialsreviews">
             <div class="tr-head">
                 <h2>Clients testimonials and reviews</h2>
@@ -343,17 +392,17 @@
                             </a>
                         </div>
                         <div class="ilink">
-                            <a href="#">
+                            <a href="#whyregister">
                                 <p>Why register?</p>
                             </a>
                         </div>
                         <div class="ilink">
-                            <a href="#">
+                            <a href="#testimonies">
                                 <p>Testimonials</p>
                             </a>
                         </div>
                         <div class="ilink">
-                            <a href="#">
+                            <a href="#orginvite">
                                 <p>Trainings</p>
                             </a>
                         </div>
@@ -377,16 +426,16 @@
                     <p>© 2024 HR-clinic with Emmanuel Faith. All Rights Reserved.</p>
                 </div>
                 <div class="socials">
-                    <a href="#">
+                    <a href="#" target="_blank">
                         <img src="assets/images/fa-brands_facebook-square.svg" alt="Facebook">
                     </a>
-                    <a href="#">
+                    <a href="https://x.com/themmanuelfaith" target="_blank">
                         <img src="assets/images/fa-brands_twitter-square.svg" alt="Twitter">
                     </a>
-                    <a href="#">
+                    <a href="#" target="_blank">
                         <img src="assets/images/fa-brands_instagram-square.svg" alt="Instagram">
                     </a>
-                    <a href="#">
+                    <a href="https://www.linkedin.com/in/emmanuel-faith/" target="_blank">
                         <img src="assets/images/fa-brands_linkedin.svg" alt="LinkedIn">
                     </a>
                 </div>
@@ -394,7 +443,8 @@
         </div>
     </footer>
 
-    <script src="assets/js/scrollhead.js"></script>
+    <script src="assets/js/index.js"></script>
+    <script src="assets/js/form-submit.js"></script>
     <script src="assets/js/mobile-menu.js"></script>
 </body>
 </html>

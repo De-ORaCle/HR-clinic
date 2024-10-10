@@ -76,7 +76,6 @@ header {
     align-items: center;
     justify-content: space-between;
     z-index: 99;
-    padding: 8px 0;
 }
 
 .mobile-header.visible {
@@ -1042,6 +1041,10 @@ header {
     font-size: 18px;
     font-family: "Proxima Nova";
     color: #FFF;
+}
+
+.bsb-input select option {
+    color: #000;
 }
 
 .bs-body button {
